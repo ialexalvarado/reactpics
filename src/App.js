@@ -1,7 +1,16 @@
-function App(){
-    <div>
-        some
-    </div>
-}
+import SearchBar from "./components/SearchBar"
+import searchImages from "./api"
 
-export default App
+export const App= ()=>{ 
+
+    const handleSubmit= (term)=>{
+        console.log('do search '+term)
+        searchImages(term)
+    }
+
+    return (
+    <div>
+        <SearchBar onSubmit={handleSubmit} />
+    </div>
+    )
+}
